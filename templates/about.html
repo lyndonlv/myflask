@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    关于我
+{% endblock %}
+
+{% block body %}
+    <h1>hello_world.{{ username }} </h1>
+    <h1>名字长度{{ username|length }} </h1>  
+
+    {% if age > 18 %}
+        <div>您已经成年了！</div>
+    {% elif age < 18 %}
+        <div>您还没有成年！</div>
+    {% else %}
+        <div>您刚好成年了！</div>
+    {% endif %} 
+    <ul>
+    {% for book in books %}
+        <li>{{ book }}</li>
+    {% endfor %}
+    </ul>
+    {% for key,value in person.items() %}
+    <div>{{ key }}:{{ value }}</div>
+    {% endfor %}
+{% endblock %}
